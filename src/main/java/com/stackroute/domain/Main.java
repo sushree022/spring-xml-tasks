@@ -13,15 +13,15 @@ public class Main {
 //        getting bean of Movie class
         Movie movie1 = (Movie) context.getBean("movie1");
         System.out.println(movie1.getActor());
+        //        getting bean of Actor class
+        Actor actor1 = (Actor) context.getBean("actor1");
+        System.out.println("age of actor 1= " + actor1.getAge());
 
 //        getting movie bean using xml Bean factory
 //        creating container
         XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
 //        getting bean of movie class
-        Movie movie2 = (Movie) context.getBean("movie1");
+        Movie movie2 = (Movie) factory.getBean("movie1");
         System.out.println(movie2.getActor());
-//        getting bean of Actor class
-        Actor actor1 = (Actor) context.getBean("actor1");
-        System.out.println("age of actor 1= " + actor1.getAge());
     }
 }
