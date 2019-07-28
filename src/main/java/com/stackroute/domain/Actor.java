@@ -6,6 +6,13 @@ public class Actor {
     private String gender;
     private int age;
 
+    //    constructor
+    public Actor(String name, String gender, int age) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+    }
+
     //    setters and getters
     public String getName() {
         return name;
