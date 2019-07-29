@@ -9,10 +9,11 @@ import org.springframework.context.ApplicationContextAware;
 
 import java.util.List;
 
-public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNameAware {
-//    instance of Actor class created
+public class Movie {
+    //    instance of Actor class created
     private List<Actor> actor;
 
+    //    constructors
     public Movie() {
     }
 
@@ -20,7 +21,8 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
         this.actor = actor;
     }
 
-    public List<Actor>getActor() {
+    //    getters and setters
+    public List<Actor> getActor() {
         return actor;
     }
 
@@ -36,20 +38,4 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
                 '}';
     }
 
-    @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        System.out.println("bean factory implemented");
-    }
-
-    @Override
-    public void setBeanName(String s) {
-        System.out.println("bean name set" +s);
-
-    }
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        System.out.println("application context implemented");
-
-    }
 }

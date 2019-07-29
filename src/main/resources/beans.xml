@@ -19,4 +19,8 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 
     <bean name="movie1" class="com.stackroute.domain.Movie" autowire="constructor">
     </bean>
+<!--    custom destory and custom init method called-->
+    <bean id= "life-cycle-bean" class="com.stackroute.domain.BeanLifecycleDemoBean" init-method="customInit" destroy-method="customDestroy" >
+
+    </bean>
 </beans>

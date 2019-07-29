@@ -1,6 +1,7 @@
 package com.stackroute.domain;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
@@ -13,5 +14,8 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Movie movie1 = (Movie) context.getBean("movie1");
         System.out.println(movie1.getActor());
+//        beanlife cycle demo bean class method calling
+        ConfigurableApplicationContext context2 = new ClassPathXmlApplicationContext("beans.xml");
+        BeanLifecycleDemoBean bean = (BeanLifecycleDemoBean) context2.getBean("life-cycle-bean");
     }
 }
