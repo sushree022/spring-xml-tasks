@@ -9,6 +9,6 @@ public class Main {
 //        creating container
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Movie movie1 = (Movie) context.getBean("movie1");
-        System.out.println(movie1);
+        System.out.println(movie1.getActor());
     }
 }
