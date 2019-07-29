@@ -1,5 +1,6 @@
 package com.stackroute.domain;
 
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,8 +15,10 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Movie movie1 = (Movie) context.getBean("movie1");
         System.out.println(movie1.getActor());
-//        beanlife cycle demo bean class method calling
+//        beanlife cycle demo bean
         ConfigurableApplicationContext context2 = new ClassPathXmlApplicationContext("beans.xml");
         BeanLifecycleDemoBean bean = (BeanLifecycleDemoBean) context2.getBean("life-cycle-bean");
+//        BeanPostProcessorDemoBean
+        BeanPostProcessor postProcessorBean= (BeanPostProcessor) context2.getBean("post-processor-bean");
     }
 }

@@ -15,12 +15,19 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
         <constructor-arg index="1" value="female"></constructor-arg>
         <constructor-arg index="2" value="45"></constructor-arg>
     </bean>
-
+    <bean id="actor3" name="actor3" class="com.stackroute.domain.Actor">
+        <constructor-arg type="String" value="Siddharth"></constructor-arg>
+        <constructor-arg type="String" value="male"></constructor-arg>
+        <constructor-arg type="int" value="34"></constructor-arg>
+    </bean>
 
     <bean name="movie1" class="com.stackroute.domain.Movie" autowire="constructor">
     </bean>
-<!--    custom destory and custom init method called-->
-    <bean id= "life-cycle-bean" class="com.stackroute.domain.BeanLifecycleDemoBean" init-method="customInit" destroy-method="customDestroy" >
+    <!--    custom destory and custom init method called-->
+    <bean id="life-cycle-bean" class="com.stackroute.domain.BeanLifecycleDemoBean" init-method="customInit"
+          destroy-method="customDestroy">
+    </bean>
 
+    <bean id="post-processor-bean" class="com.stackroute.domain.BeanPostProcessorDemoBean">
     </bean>
 </beans>
