@@ -17,6 +17,6 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
     </bean>
 
 
-    <bean name="movie1" class="com.stackroute.domain.Movie" autowire="byName">
+    <bean name="movie1" class="com.stackroute.domain.Movie" autowire="constructor">
     </bean>
 </beans>
