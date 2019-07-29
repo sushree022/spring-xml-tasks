@@ -5,9 +5,9 @@
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean id="actor1" name="actor1" class="com.stackroute.domain.Actor">
-        <constructor-arg name="name" value="Sahrukh"></constructor-arg>
-        <constructor-arg name="gender" value="male"></constructor-arg>
-        <constructor-arg name="age" value="48"></constructor-arg>
+        <constructor-arg index="0" value="Sahrukh"></constructor-arg>
+        <constructor-arg index="1" value="male"></constructor-arg>
+        <constructor-arg index="2" value="48"></constructor-arg>
     </bean>
 
     <bean id="actor2" name="actor2" class="com.stackroute.domain.Actor">
@@ -15,21 +15,8 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
         <constructor-arg index="1" value="female"></constructor-arg>
         <constructor-arg index="2" value="45"></constructor-arg>
     </bean>
-    <bean id="actor3" name="actor3" class="com.stackroute.domain.Actor">
-        <constructor-arg type="String" value="Siddharth"></constructor-arg>
-        <constructor-arg type="String" value="male"></constructor-arg>
-        <constructor-arg type="int" value="34"></constructor-arg>
-    </bean>
 
-    <!--constructor based injection-->
-    <bean name="movie1, movie2" class="com.stackroute.domain.Movie" scope="prototype">
-        <constructor-arg name="actor">
-            <list>
-                <ref bean="actor1"></ref>
-                <ref bean="actor2"></ref>
-                <ref bean="actor3"></ref>
-            </list>
-        </constructor-arg>
-    </bean>
 
+    <bean name="movie1" class="com.stackroute.domain.Movie" autowire="byName">
+    </bean>
 </beans>
