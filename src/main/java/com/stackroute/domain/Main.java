@@ -11,11 +11,8 @@ public class Main {
     public static void main(String[] args) {
 //        Getting Movie bean Using ApplicationContext
 //        creating container
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Movie movie1 = (Movie) context.getBean("movie1");
         System.out.println(movie1.getActor());
-//        beanlife cycle demo bean class method calling
-        ConfigurableApplicationContext context2 = new ClassPathXmlApplicationContext("beans.xml");
-        BeanLifecycleDemoBean bean = (BeanLifecycleDemoBean) context2.getBean("life-cycle-bean");
     }
 }
