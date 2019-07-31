@@ -9,7 +9,6 @@ import org.springframework.core.io.ClassPathResource;
 
 public class Main {
     public static void main(String[] args) {
-//        Getting Movie bean Using ApplicationContext
 //        creating container
         ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Movie movie1 = (Movie) context.getBean("movie1");
